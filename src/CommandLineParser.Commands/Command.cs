@@ -1,9 +1,12 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
 
 namespace CommandLineParser.Commands
 {
     public abstract class Command<T> : ICommand<T> where T : class
     {
+        public Type OptionsType => typeof(T);
+
         public virtual bool CanHandle(object options)
         {
             return options is T;
