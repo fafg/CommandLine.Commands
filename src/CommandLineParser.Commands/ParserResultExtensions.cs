@@ -40,6 +40,5 @@ namespace CommandLineParser.Commands
             }
             return result;
         }
-
     }
 }
