@@ -1,0 +1,9 @@
+<Project>
+
+  <PropertyGroup>
+    <Authors>Arkadiusz Zachert</Authors>
+    <RepositoryUrl>https://github.com/azachert/CommandLineParser.Commands.git</RepositoryUrl>
+    <PackageLicenseUrl>https://raw.githubusercontent.com/azachert/CommandLineParser.Commands/master/LICENSE</PackageLicenseUrl>
+  </PropertyGroup>
+
+</Project>

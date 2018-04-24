@@ -1,0 +1,12 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="..\..\package.props" />
+  
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2;netcoreapp2</TargetFrameworks>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="CommandLineParser" Version="[2.2.1,3.0.0)" />
+  </ItemGroup>
+
+</Project>
