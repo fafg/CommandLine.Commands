@@ -2,7 +2,10 @@
   <Import Project="..\..\package.props" />
   
   <PropertyGroup>
-    <TargetFrameworks>netstandard2;netcoreapp2</TargetFrameworks>
+    <TargetFrameworks>netstandard1.5</TargetFrameworks>
+    <RootNamespace>CommandLine.Commands</RootNamespace>
+    <RepositoryType>git</RepositoryType>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <ItemGroup>
