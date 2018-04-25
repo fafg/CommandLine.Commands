@@ -1,0 +1,12 @@
+<Project>
+
+  <PropertyGroup>
+    <Authors>Arkadiusz Zachert</Authors>
+    <Copyright>Copyrights © Arkadiusz Zachert</Copyright>
+    <RepositoryType>git</RepositoryType>
+    <PackageLicenseUrl>https://raw.githubusercontent.com/azachert/CommandLine.Verbs/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/azachert/CommandLine.Verbs</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/azachert/CommandLine.Verbs.git</RepositoryUrl>
+  </PropertyGroup>
+
+</Project>
