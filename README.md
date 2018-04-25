@@ -1,4 +1,4 @@
-# CommandLineParser.Commands
+# CommandLineParser.Verbs
 
 [![Build status](https://ci.appveyor.com/api/projects/status/3mii1nsbg8hig49o?svg=true)](https://ci.appveyor.com/project/azachert/commandlineparser-commands)
 
@@ -12,13 +12,13 @@ class Program
 {
 	public static async Task Main(IEnumerable<string> args)
 	{
-		var commands = new ICommand[] 
+		var verbs = new IVerb[] 
 		{
-			// add your commands here
+			// add your verbs here
 		};
 
-		var parsed = Parser.Default.ParseArguments(args, commands);
-		await parsed.WithParsedAsync(commands, returnValue => {
+		var parsed = Parser.Default.ParseArguments(args, verbs);
+		await parsed.WithParsedAsync(verbs, returnValue => {
 			// consume returned value
 		});
 		parsed.WithNotParsed(result => {
@@ -30,6 +30,6 @@ class Program
 
 
 ## Copyrights & License
-Copyrights (C) Arkadiusz Zachert
+Copyrights © Arkadiusz Zachert
 
 This software is licensed based on [MIT License](https://raw.githubusercontent.com/azachert/CommandLineParser.Commands/master/LICENSE)

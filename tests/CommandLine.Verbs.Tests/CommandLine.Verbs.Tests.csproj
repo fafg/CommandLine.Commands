@@ -10,7 +10,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\CommandLineParser.Commands\CommandLineParser.Commands.csproj" />
+    <ProjectReference Include="..\..\src\CommandLine.Verbs\CommandLine.Verbs.csproj" />
   </ItemGroup>
 
   <ItemGroup>

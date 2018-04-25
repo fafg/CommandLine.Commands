@@ -1,10 +1,8 @@
-﻿using CommandLine;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace CommandLineParser.Commands.Tests
+namespace CommandLine.Verbs.Tests
 {
     [TestClass]
     public class ParserResultExtensionsTests
@@ -16,8 +14,8 @@ namespace CommandLineParser.Commands.Tests
             // Arrange
 
             // Act
-            (await Parser.Default.ParseArguments(new List<string>(), new ICommand[0])
-                .WithParsedAsync(new ICommand[0], result => {
+            (await Parser.Default.ParseArguments(new List<string>(), new IVerb[0])
+                .WithParsedAsync(new IVerb[0], result => {
                     // Assert
                     Assert.AreEqual(result, 433);
                 }))

@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27428.2037
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CommandLineParser.Commands", "src\CommandLineParser.Commands\CommandLineParser.Commands.csproj", "{729E4190-E934-4157-AB15-5533B8E99B3D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CommandLine.Verbs", "src\CommandLine.Verbs\CommandLine.Verbs.csproj", "{729E4190-E934-4157-AB15-5533B8E99B3D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{F51FC7C0-C0F3-4FFE-A538-EEC5FF5FD912}"
 	ProjectSection(SolutionItems) = preProject
@@ -14,9 +14,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{A127AAEC-AB06-4230-9264-5D2234FE3CC1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CommandLineParser.Commands.Tests", "tests\CommandLineParser.Commands.Tests\CommandLineParser.Commands.Tests.csproj", "{BB986724-C76A-4A23-AA8F-8FDF5987A27E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CommandLine.Verbs.Tests", "tests\CommandLine.Verbs.Tests\CommandLine.Verbs.Tests.csproj", "{BB986724-C76A-4A23-AA8F-8FDF5987A27E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProcessingCommands", "example\ProcessingCommands\ProcessingCommands.csproj", "{FD5F9974-3BDA-4589-B1C2-E7E3FEAA3F96}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProcessingCommands", "example\ProcessingCommands\ProcessingCommands.csproj", "{FD5F9974-3BDA-4589-B1C2-E7E3FEAA3F96}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Examples", "Examples", "{7BF46671-08CE-4D73-8F5E-D03C1B5FC845}"
 EndProject

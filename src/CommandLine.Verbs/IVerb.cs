@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Threading.Tasks;
 
-namespace CommandLineParser.Commands
+namespace CommandLine.Verbs
 {
-    public interface ICommand
+    public interface IVerb
     {
         Type OptionsType { get; }
         bool CanHandle(object options);
@@ -11,7 +11,7 @@ namespace CommandLineParser.Commands
         Task<object> ExecuteAsync(object options);
     }
 
-    public interface ICommand<T> : ICommand where T : class
+    public interface IVerb<in T> : IVerb where T : class
     {
         object Execute(T options);
         Task<object> ExecuteAsync(T options);

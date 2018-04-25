@@ -2,8 +2,11 @@
 
   <PropertyGroup>
     <Authors>Arkadiusz Zachert</Authors>
-    <RepositoryUrl>https://github.com/azachert/CommandLineParser.Commands.git</RepositoryUrl>
-    <PackageLicenseUrl>https://raw.githubusercontent.com/azachert/CommandLineParser.Commands/master/LICENSE</PackageLicenseUrl>
+    <Copyright>Copyrights © Arkadiusz Zachert</Copyright>
+    <RepositoryType>git</RepositoryType>
+    <PackageLicenseUrl>https://raw.githubusercontent.com/azachert/CommandLine.Verbs/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/azachert/CommandLine.Verbs</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/azachert/CommandLine.Verbs.git</RepositoryUrl>
   </PropertyGroup>
 
 </Project>
