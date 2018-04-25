@@ -1,6 +1,6 @@
 # CommandLine.Verbs
 
-[![Build status](https://ci.appveyor.com/api/projects/status/3mii1nsbg8hig49o?svg=true)](https://ci.appveyor.com/project/azachert/commandlineparser-commands)
+[![Build status](https://ci.appveyor.com/api/projects/status/lii5ru8udg5kb2ae?svg=true)](https://ci.appveyor.com/project/azachert/commandline-verbs)
 
 ## Introduction
 
