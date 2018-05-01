@@ -16,15 +16,15 @@ namespace ProcessingCommands
                 new AddVerb()
             };
 
-            var parsed = Parser.Default.ParseArguments(args, commands);
-            await parsed.WithParsedAsync(commands, returnValue =>
-            {
-                // consume returned value
-            });
-            parsed.WithNotParsed(result =>
-            {
-                // handle error
-            });
+            await Parser.Default.ParseArguments(args, commands)
+                .WithNotParsed(result =>
+                {
+                    // handle error
+                })
+                .WithParsedAsync(commands, returnValue =>
+                {
+                    // consume returned value
+                });
 
             return 0;
         }

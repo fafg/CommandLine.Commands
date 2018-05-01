@@ -1,7 +1,7 @@
 ﻿using System.Threading.Tasks;
 using CommandLine.Verbs;
 
-namespace ProcessingCommands.Commands.Add
+namespace ProcessingCommands.Verbs.Add
 {
     class AddVerb : Verb<AddOptions>
     {

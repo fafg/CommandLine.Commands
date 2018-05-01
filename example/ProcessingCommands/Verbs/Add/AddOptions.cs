@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace ProcessingCommands.Commands.Add
+namespace ProcessingCommands.Verbs.Add
 {
     [Verb("add")]
     class AddOptions

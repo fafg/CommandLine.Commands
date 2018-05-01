@@ -7,6 +7,27 @@
 This is an extension to [CommandLineParser](https://github.com/commandlineparser/commandline) project.
 ## Usage
 
+Create your options class
+``` csharp
+[Verb("add")]
+internal class AddOptions
+{
+}
+```
+
+Create your handler class
+``` csharp
+internal class AddVerb : Verb<AddOptions>
+{
+        public override async Task<object> ExecuteAsync(AddOptions options)
+        {
+            // do your magic here
+            // and return some value
+        }
+}
+```
+
+Handle input arguments in Program.Main
 ``` csharp
 class Program 
 {
@@ -14,19 +35,21 @@ class Program
 	{
 		var verbs = new IVerb[] 
 		{
-			// add your verbs here
+			new AddVerb(),
+			// add your other verbs here
 		};
 
-		var parsed = Parser.Default.ParseArguments(args, verbs);
-		await parsed.WithParsedAsync(verbs, returnValue => {
-			// consume returned value
-		});
-		parsed.WithNotParsed(result => {
-			// handle error
-		});
+		await Parser.Default.ParseArguments(args, verbs)
+		    .WithNotParsed(result => {
+			    // handle error
+		    })
+		    .parsed.WithParsedAsync(verbs, returnValue => {
+			    // consume returned value
+		    });
 	}
 }
 ```
+
 
 
 ## Copyrights & License
