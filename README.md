@@ -15,7 +15,7 @@ internal class AddOptions
 }
 ```
 
-Create your handler class
+Create your verb handler class
 ``` csharp
 internal class AddVerb : Verb<AddOptions>
 {

@@ -7,7 +7,7 @@ namespace ProcessingCommands.Verbs.Add
     {
         public override async Task<object> ExecuteAsync(AddOptions options)
         {
-            return 33;
+            return await Task.FromResult(33);
         }
     }
 }

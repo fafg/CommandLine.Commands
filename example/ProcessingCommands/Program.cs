@@ -1,8 +1,8 @@
 ﻿using CommandLine;
-using ProcessingCommands.Commands.Add;
 using System;
 using System.Threading.Tasks;
 using CommandLine.Verbs;
+using ProcessingCommands.Verbs.Add;
 
 namespace ProcessingCommands
 {
