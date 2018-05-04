@@ -12,12 +12,12 @@ namespace CommandLine.Verbs.Tests
             // Arrange
 
             // Act
-            (await Parser.Default.ParseArguments(new List<string>(), new IVerb[0])
+            await Parser.Default.ParseArguments(new List<string>(), new IVerb[0])
+                .WithNotParsed(parsed => { })
                 .WithParsedAsync(new IVerb[0], result => {
                     // Assert
                     Assert.Equal(433, result);
-                }))
-                .WithNotParsed(parsed => { })
+                })
                 ;
         }
     }

@@ -1,16 +1,16 @@
-version: 0.2.{build}
+version: 0.2.0.{build}
 build_script:
 - cmd: >-
-    dotnet restore
+    dotnet test
 
-    dotnet build src\CommandLine.Verbs\CommandLine.Verbs.csproj -c release /p:Version=%APPVEYOR_BUILD_VERSION%
+    dotnet build -c release /p:Version=%APPVEYOR_BUILD_VERSION%
 artifacts:
 - path: '**\*.nupkg'
-  name: NuGet
+  name: NuGetPkg
 deploy:
 - provider: NuGet
   api_key:
     secure: 46fwA3LUXaYRFeOcvOoF5iImR60JuOIbuv3eDDIvCDiNEb3Eq9sTkrS3vAHxN7Le
-  artifact: NuGet
+  artifact: NuGetPkg
   on:
     branch: master

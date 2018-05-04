@@ -9,7 +9,7 @@
     <Product>CommandLineParser.Verbs</Product>
     <Description>This is an addition to CommandLineParser to handle Verbs plugins</Description>
   </PropertyGroup>
-
+  
   <ItemGroup>
     <PackageReference Include="CommandLineParser" Version="2.2.1" />
   </ItemGroup>
