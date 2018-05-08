@@ -1,8 +1,8 @@
 ﻿using CommandLine;
-using ProcessingCommands.Commands.Add;
 using System;
 using System.Threading.Tasks;
 using CommandLine.Verbs;
+using ProcessingCommands.Commands.Add;
 
 namespace ProcessingCommands
 {
@@ -10,21 +10,21 @@ namespace ProcessingCommands
     {
         public static async Task<int> Main(string[] args)
         {
-            var commands = new IVerb[]
+            var commands = new ICommand[]
             {
                 // add your verbserbs here
-                new AddVerb()
+                new AddCommand()
             };
 
-            var parsed = Parser.Default.ParseArguments(args, commands);
-            await parsed.WithParsedAsync(commands, returnValue =>
-            {
-                // consume returned value
-            });
-            parsed.WithNotParsed(result =>
-            {
-                // handle error
-            });
+            await Parser.Default.ParseArguments(args, commands)
+                .WithNotParsed(result =>
+                {
+                    // handle error
+                })
+                .WithParsedAsync(commands, returnValue =>
+                {
+                    // consume returned value
+                });
 
             return 0;
         }

@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 
 namespace CommandLine.Verbs
 {
-    public abstract class Verb<T> : IVerb<T> where T : class
+    public abstract class Command<T> : ICommand<T> where T : class
     {
         public Type OptionsType => typeof(T);
 
