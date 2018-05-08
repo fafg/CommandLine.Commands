@@ -3,11 +3,11 @@
   
   <PropertyGroup>
     <TargetFrameworks>netstandard1.5</TargetFrameworks>
-    <RootNamespace>CommandLine.Verbs</RootNamespace>
+    <RootNamespace>CommandLine.Commands</RootNamespace>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    <PackageId>CommandLineParser.Verbs</PackageId>
-    <Product>CommandLineParser.Verbs</Product>
-    <Description>This is an addition to CommandLineParser to handle Verbs plugins</Description>
+    <PackageId>CommandLineParser.Commands</PackageId>
+    <Product>CommandLineParser.Commands</Product>
+    <Description>This is an addition to CommandLineParser to handle Commands plugins</Description>
   </PropertyGroup>
   
   <ItemGroup>

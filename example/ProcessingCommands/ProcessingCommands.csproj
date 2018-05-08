@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\CommandLine.Verbs\CommandLine.Commands.csproj" />
+    <ProjectReference Include="..\..\src\CommandLine.Commands\CommandLine.Commands.csproj" />
   </ItemGroup>
 
 </Project>
