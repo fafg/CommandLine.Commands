@@ -2,7 +2,7 @@
 using System;
 using System.Threading.Tasks;
 using CommandLine.Verbs;
-using ProcessingCommands.Verbs.Add;
+using ProcessingCommands.Commands.Add;
 
 namespace ProcessingCommands
 {
@@ -10,10 +10,10 @@ namespace ProcessingCommands
     {
         public static async Task<int> Main(string[] args)
         {
-            var commands = new IVerb[]
+            var commands = new ICommand[]
             {
                 // add your verbserbs here
-                new AddVerb()
+                new AddCommand()
             };
 
             await Parser.Default.ParseArguments(args, commands)

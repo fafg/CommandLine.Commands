@@ -1,13 +1,22 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace CommandLine.Verbs
 {
     public static class ParserExtensions
     {
-        public static ParserResult<object> ParseArguments(this Parser parser, IEnumerable<string> args, IVerb[] verbs)
+        public static ParserResult<object> ParseArguments(this Parser parser, IEnumerable<string> args, ICommand[] commands)
         {
-            return parser.ParseArguments(args, verbs.Select(command => command.OptionsType).ToArray());
+            if (commands == null)
+            {
+                throw new ArgumentNullException(nameof(commands));
+            }
+            if (!commands.Any())
+            {
+                throw new ArgumentException("There should be at least one verb defined", nameof(commands));
+            }
+            return parser.ParseArguments(args, commands.Select(command => command.OptionsType).ToArray());
         }
     }
 }

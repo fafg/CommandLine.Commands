@@ -1,9 +1,9 @@
 ﻿using System.Threading.Tasks;
 using CommandLine.Verbs;
 
-namespace ProcessingCommands.Verbs.Add
+namespace ProcessingCommands.Commands.Add
 {
-    class AddVerb : Verb<AddOptions>
+    class AddCommand : Command<AddOptions>
     {
         public override async Task<object> ExecuteAsync(AddOptions options)
         {

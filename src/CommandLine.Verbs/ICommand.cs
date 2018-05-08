@@ -4,9 +4,9 @@ using System.Threading.Tasks;
 namespace CommandLine.Verbs
 {
     /// <summary>
-    /// Verb commands handler
+    /// CommandCommands handler
     /// </summary>
-    public interface IVerb
+    public interface ICommand
     {
         /// <summary>
         /// Returns type of options class
@@ -26,7 +26,7 @@ namespace CommandLine.Verbs
     /// Generic verb commands handler
     /// </summary>
     /// <typeparam name="T"></typeparam>
-    public interface IVerb<in T> : IVerb where T : class
+    public interface ICommand<in T> : ICommand where T : class
     {
         object Execute(T options);
         Task<object> ExecuteAsync(T options);

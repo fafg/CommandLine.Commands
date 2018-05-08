@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Threading.Tasks;
+using CommandLine.Verbs;
 
-namespace CommandLine.Verbs.Tests.Builders
+namespace CommandLine.Commands.Tests.Builders
 {
-    internal class VerbBuilder<T> where T : class
+    internal class CommandBuilder<T> where T : class
     {
-        internal class TestVerb<T> : Verb<T> where T : class
+        internal class TestCommand<T> : Command<T> where T : class
         {
             public Func<T, Task<object>> ExecuteAsyncFunc { get; internal set; }
             public Func<T, object> ExecuteFunc { get; internal set; }
@@ -25,21 +26,21 @@ namespace CommandLine.Verbs.Tests.Builders
             }
         }
 
-        private readonly TestVerb<T> _builded = new TestVerb<T>();
+        private readonly TestCommand<T> _builded = new TestCommand<T>();
 
-        public VerbBuilder<T> WithExecuteAsyncFunc(Func<T, Task<object>> func)
+        public CommandBuilder<T> WithExecuteAsyncFunc(Func<T, Task<object>> func)
         {
             _builded.ExecuteAsyncFunc = func;
             return this;
         }
 
-        public VerbBuilder<T> WithExecuteFunc(Func<T, object> func)
+        public CommandBuilder<T> WithExecuteFunc(Func<T, object> func)
         {
             _builded.ExecuteFunc = func;
             return this;
         }
 
-        internal Verb<T> Build()
+        internal Command<T> Build()
         {
             return _builded;
         }

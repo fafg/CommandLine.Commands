@@ -1,9 +1,9 @@
-﻿using CommandLine.Verbs.Tests.Builders;
+﻿using CommandLine.Commands.Tests.Builders;
 using Xunit;
 
-namespace CommandLine.Verbs.Tests
+namespace CommandLine.Commands.Tests
 {
-    public class VerbTests
+    public class CommandTests
     {
         class TestOptions
         {
@@ -14,7 +14,7 @@ namespace CommandLine.Verbs.Tests
         public void CanHandle_WhenPassingNullObjectOfProperType_ReturnsFalse()
         {
             // Arrange
-            var verb = new VerbBuilder<TestOptions>()
+            var verb = new CommandBuilder<TestOptions>()
                 .Build();
 
             // Act

@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\package.props" />
+
+  <PropertyGroup>
+    <TargetFrameworks>netstandard1.5</TargetFrameworks>
+    <RootNamespace>CommandLine.Verbs.Autofac</RootNamespace>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageId>CommandLine.Verbs.Autofac</PackageId>
+    <Product>CommandLine.Verbs.Autofac</Product>
+    <Description>This is an addition to CommandLineParser to handle Verbs plugins</Description>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Autofac" Version="4.8.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CommandLine.Verbs\CommandLine.Verbs.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,6 +1,6 @@
-# CommandLine.Verbs
+# CommandLine.Commands
 
-[![Build status](https://ci.appveyor.com/api/projects/status/lii5ru8udg5kb2ae?svg=true)](https://ci.appveyor.com/project/azachert/commandline-verbs)
+[![Build status](https://ci.appveyor.com/api/projects/status/lii5ru8udg5kb2ae?svg=true)](https://ci.appveyor.com/project/azachert/commandline-commands)
 
 ## Introduction
 
@@ -15,9 +15,9 @@ internal class AddOptions
 }
 ```
 
-Create your verb handler class
+Create your command handler class
 ``` csharp
-internal class AddVerb : Verb<AddOptions>
+internal class AddCommand : Command<AddOptions>
 {
         public override async Task<object> ExecuteAsync(AddOptions options)
         {
@@ -33,17 +33,17 @@ class Program
 {
 	public static async Task Main(IEnumerable<string> args)
 	{
-		var verbs = new IVerb[] 
+		var commands = new ICommand[] 
 		{
-			new AddVerb(),
-			// add your other verbs here
+			new AddCommand(),
+			// add your other commands here
 		};
 
-		await Parser.Default.ParseArguments(args, verbs)
+		await Parser.Default.ParseArguments(args, commands)
 		    .WithNotParsed(result => {
 			    // handle error
 		    })
-		    .parsed.WithParsedAsync(verbs, returnValue => {
+		    .parsed.WithParsedAsync(commands, returnValue => {
 			    // consume returned value
 		    });
 	}
