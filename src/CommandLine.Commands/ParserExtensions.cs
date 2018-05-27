@@ -14,7 +14,7 @@ namespace CommandLine.Commands
             }
             if (!commands.Any())
             {
-                throw new ArgumentException("There should be at least one verb defined", nameof(commands));
+                throw new ArgumentException("There should be at least one command defined", nameof(commands));
             }
             return parser.ParseArguments(args, commands.Select(command => command.OptionsType).ToArray());
         }

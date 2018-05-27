@@ -14,11 +14,11 @@ namespace CommandLine.Commands.Tests
         public void CanHandle_WhenPassingNullObjectOfProperType_ReturnsFalse()
         {
             // Arrange
-            var verb = new CommandBuilder<TestOptions>()
+            var command = new CommandBuilder<TestOptions>()
                 .Build();
 
             // Act
-            var result = verb.CanHandle((TestOptions)null);
+            var result = command.CanHandle((TestOptions)null);
 
             // Assert
             Assert.False(result);

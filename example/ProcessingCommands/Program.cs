@@ -12,7 +12,7 @@ namespace ProcessingCommands
         {
             var commands = new ICommand[]
             {
-                // add your verbserbs here
+                // add your commands here
                 new AddCommand()
             };
 

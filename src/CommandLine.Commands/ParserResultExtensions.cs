@@ -10,14 +10,14 @@ namespace CommandLine.Commands
         {
             if (result is Parsed<object> succesfullyParsed)
             {
-                var verb = commands.FirstOrDefault(c => c.CanHandle(succesfullyParsed.Value));
-                if (verb != null)
+                var command = commands.FirstOrDefault(c => c.CanHandle(succesfullyParsed.Value));
+                if (command != null)
                 {
-                    action(verb.Execute(succesfullyParsed.Value));
+                    action(command.Execute(succesfullyParsed.Value));
                 }
                 else
                 {
-                    throw new NoMatchingVerbException();
+                    throw new NoMatchingCommandException();
                 }
             }
             return result;
@@ -27,14 +27,14 @@ namespace CommandLine.Commands
         {
             if (result is Parsed<object> succesfullyParsed)
             {
-                var verb = commands.FirstOrDefault(c => c.CanHandle(succesfullyParsed.Value));
-                if (verb != null)
+                var command = commands.FirstOrDefault(c => c.CanHandle(succesfullyParsed.Value));
+                if (command != null)
                 {
-                    action(await verb.ExecuteAsync(succesfullyParsed.Value));
+                    action(await command.ExecuteAsync(succesfullyParsed.Value));
                 }
                 else
                 {
-                    throw new NoMatchingVerbException();
+                    throw new NoMatchingCommandException();
                 }
             }
             return result;
