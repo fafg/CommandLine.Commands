@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Threading.Tasks;
-using CommandLine.Verbs;
 
 namespace CommandLine.Commands.Tests.Builders
 {

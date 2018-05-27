@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 
-namespace CommandLine.Verbs
+namespace CommandLine.Commands
 {
     /// <summary>
     /// CommandCommands handler

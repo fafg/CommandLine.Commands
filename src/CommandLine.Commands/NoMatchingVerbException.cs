@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace CommandLine.Verbs
+namespace CommandLine.Commands
 {
     internal class NoMatchingVerbException : Exception
     {

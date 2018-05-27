@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace CommandLine.Verbs
+namespace CommandLine.Commands
 {
     public static class ParserExtensions
     {

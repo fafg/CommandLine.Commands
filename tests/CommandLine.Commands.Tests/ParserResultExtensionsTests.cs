@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
-using CommandLine.Verbs;
 using Moq;
 using Xunit;
 
@@ -27,24 +26,24 @@ namespace CommandLine.Commands.Tests
             Assert.Throws<ArgumentNullException>(() => Parser.Default.ParseArguments(new List<string>(), null));
         }
 
-        [Fact]
-        public async Task WithParsedAsync_WhenCalled_CallsActionWithReturnedValue()
-        {
-            // Arrange
-            var commandMock = new Mock<ICommand>();
-            commandMock.Setup(m => m.CanHandle(It.IsAny<object>())).Returns(true);
-            commandMock.Setup(m => m.ExecuteAsync(It.IsAny<object>())).Returns(Task.FromResult<object>(433));
+        //[Fact]
+        //public async Task WithParsedAsync_WhenCalled_CallsActionWithReturnedValue()
+        //{
+        //    // Arrange
+        //    var commandMock = new Mock<ICommand>();
+        //    commandMock.Setup(m => m.CanHandle(It.IsAny<object>())).Returns(true);
+        //    commandMock.Setup(m => m.ExecuteAsync(It.IsAny<object>())).Returns(Task.FromResult<object>(433));
 
-            var commands = new[] { commandMock.Object };
+        //    var commands = new[] { commandMock.Object };
 
-            // Act
-            await Parser.Default.ParseArguments(new List<string>(), commands)
-                .WithNotParsed(parsed => { })
-                .WithParsedAsync(commands, result => {
-                    // Assert
-                    Assert.Equal(433, result);
-                })
-                ;
-        }
+        //    // Act
+        //    await Parser.Default.ParseArguments(new List<string>(), commands)
+        //        .WithNotParsed(parsed => { })
+        //        .WithParsedAsync(commands, result => {
+        //            // Assert
+        //            Assert.Equal(433, result);
+        //        })
+        //        ;
+        //}
     }
 }

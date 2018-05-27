@@ -1,7 +1,7 @@
 ﻿using CommandLine;
 using System;
 using System.Threading.Tasks;
-using CommandLine.Verbs;
+using CommandLine.Commands;
 using ProcessingCommands.Commands.Add;
 
 namespace ProcessingCommands
