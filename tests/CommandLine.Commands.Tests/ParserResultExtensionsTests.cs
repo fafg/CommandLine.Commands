@@ -33,13 +33,15 @@ namespace CommandLine.Commands.Tests
             // Arrange
             var commandMock = new Mock<ICommand>();
             commandMock.Setup(m => m.CanHandle(It.IsAny<object>())).Returns(true);
-            commandMock.Setup(m => m.ExecuteAsync(It.IsAny<object>())).Returns(Task.FromResult<object>(433));
+            commandMock.Setup(m => m.ExecuteAsync(It.IsAny<object>())).Returns(Task.FromResult<int>(433));
 
             var commands = new[] { commandMock.Object };
 
             // Act
             await Parser.Default.ParseArguments(new List<string>(), commands)
-                .WithNotParsed(parsed => { })
+                .WithNotParsed(parsed => {
+                    Assert.True(false);
+                })
                 .WithParsedAsync(commands, result => {
                     // Assert
                     Assert.Equal(433, result);

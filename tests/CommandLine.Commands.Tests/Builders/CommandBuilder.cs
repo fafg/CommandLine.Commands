@@ -8,15 +8,15 @@ namespace CommandLine.Commands.Tests.Builders
     {
         internal class TestCommand : Command<T>
         {
-            public Func<T, Task<object>> ExecuteAsyncFunc { get; internal set; }
-            public Func<T, object> ExecuteFunc { get; internal set; }
+            public Func<T, Task<int>> ExecuteAsyncFunc { get; internal set; }
+            public Func<T, int> ExecuteFunc { get; internal set; }
 
-            public override async Task<object> ExecuteAsync(T options)
+            public override async Task<int> ExecuteAsync(T options)
             {
                 return await ExecuteAsyncFunc(options);
             }
 
-            public override object Execute(T options)
+            public override int Execute(T options)
             {
                 if (ExecuteFunc == null)
                 {
@@ -28,13 +28,13 @@ namespace CommandLine.Commands.Tests.Builders
 
         private readonly TestCommand _builded = new TestCommand();
 
-        public CommandBuilder<T> WithExecuteAsyncFunc(Func<T, Task<object>> func)
+        public CommandBuilder<T> WithExecuteAsyncFunc(Func<T, Task<int>> func)
         {
             _builded.ExecuteAsyncFunc = func;
             return this;
         }
 
-        public CommandBuilder<T> WithExecuteFunc(Func<T, object> func)
+        public CommandBuilder<T> WithExecuteFunc(Func<T, int> func)
         {
             _builded.ExecuteFunc = func;
             return this;

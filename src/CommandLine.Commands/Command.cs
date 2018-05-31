@@ -12,19 +12,19 @@ namespace CommandLine.Verbs
             return options is T;
         }
 
-        public virtual object Execute(T options)
+        public virtual int Execute(T options)
         {
             return ExecuteAsync(options).Result;
         }
 
-        public object Execute(object options)
+        public int Execute(object options)
         {
             return Execute(options as T);
         }
 
-        public abstract Task<object> ExecuteAsync(T options);
+        public abstract Task<int> ExecuteAsync(T options);
 
-        public async Task<object> ExecuteAsync(object options)
+        public async Task<int> ExecuteAsync(object options)
         {
             return await ExecuteAsync(options as T);
         }
