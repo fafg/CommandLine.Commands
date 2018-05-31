@@ -6,7 +6,7 @@ namespace CommandLine.Commands.Tests.Builders
 {
     internal class CommandBuilder<T> where T : class
     {
-        internal class TestCommand<T> : Command<T> where T : class
+        internal class TestCommand : Command<T>
         {
             public Func<T, Task<object>> ExecuteAsyncFunc { get; internal set; }
             public Func<T, object> ExecuteFunc { get; internal set; }
@@ -26,7 +26,7 @@ namespace CommandLine.Commands.Tests.Builders
             }
         }
 
-        private readonly TestCommand<T> _builded = new TestCommand<T>();
+        private readonly TestCommand _builded = new TestCommand();
 
         public CommandBuilder<T> WithExecuteAsyncFunc(Func<T, Task<object>> func)
         {
