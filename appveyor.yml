@@ -4,7 +4,7 @@ build_script:
 - ps:
     Get-ChildItem -recurse *tests.csproj | % { dotnet test $_.FullName;if($? -ne $TRUE) {throw 'Unit Test Failure.'} }
 
-    dotnet build -c release /p:Version=%APPVEYOR_BUILD_VERSION%
+    dotnet build -c release /p:Version=$APPVEYOR_BUILD_VERSION
 artifacts:
 - path: '**\*.nupkg'
   name: NuGetPkg
