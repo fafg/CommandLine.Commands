@@ -1,6 +1,6 @@
 version: 0.2.0.{build}
 build_script:
-- cmd: >-
+- ps:
     Get-ChildItem -recurse *tests.csproj | % { dotnet test $_.FullName;if($? -ne $TRUE) {throw 'Unit Test Failure.'} }
 
     dotnet build -c release /p:Version=%APPVEYOR_BUILD_VERSION%
