@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Threading.Tasks;
 using CommandLine.Verbs;
 using Moq;
@@ -31,14 +32,16 @@ namespace CommandLine.Commands.Tests
         public async Task WithParsedAsync_WhenCalled_CallsActionWithReturnedValue()
         {
             // Arrange
-            var commandMock = new Mock<ICommand>();
+            var commandMock = new Mock<ICommand>(MockBehavior.Strict);
+            TypeDescriptor.AddAttributes(commandMock.Object, new VerbAttribute("abcd"));
             commandMock.Setup(m => m.CanHandle(It.IsAny<object>())).Returns(true);
-            commandMock.Setup(m => m.ExecuteAsync(It.IsAny<object>())).Returns(Task.FromResult<int>(433));
+            commandMock.Setup(m => m.ExecuteAsync(It.IsAny<object>())).Returns(Task.FromResult(433));
+            commandMock.Setup(m => m.OptionsType).Returns(typeof(TestOptions));
 
             var commands = new[] { commandMock.Object };
 
             // Act
-            await Parser.Default.ParseArguments(new List<string>(), commands)
+            await Parser.Default.ParseArguments(new string[] { "abcd" }, commands)
                 .WithNotParsed(parsed => {
                     Assert.True(false);
                 })
@@ -47,6 +50,12 @@ namespace CommandLine.Commands.Tests
                     Assert.Equal(433, result);
                 })
                 ;
+        }
+
+        [Verb("abcd")]
+        class TestOptions
+        {
+
         }
     }
 }
