@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Threading.Tasks;
-using CommandLine.Verbs;
 using Moq;
 using Xunit;
 

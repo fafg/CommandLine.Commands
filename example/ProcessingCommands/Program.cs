@@ -1,7 +1,7 @@
 ﻿using CommandLine;
 using System;
 using System.Threading.Tasks;
-using CommandLine.Verbs;
+using CommandLine.Commands;
 using ProcessingCommands.Commands.Add;
 
 namespace ProcessingCommands
@@ -12,7 +12,7 @@ namespace ProcessingCommands
         {
             var commands = new ICommand[]
             {
-                // add your verbserbs here
+                // add your commands here
                 new AddCommand()
             };
 

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 
-namespace CommandLine.Verbs
+namespace CommandLine.Commands
 {
     /// <summary>
     /// CommandCommands handler
@@ -16,14 +16,14 @@ namespace CommandLine.Verbs
         /// Checks if can handle options class type
         /// </summary>
         /// <param name="options"></param>
-        /// <returns>True when verb handler can handle option class type</returns>
+        /// <returns>True when command can handle option class type</returns>
         bool CanHandle(object options);
         int Execute(object options);
         Task<int> ExecuteAsync(object options);
     }
 
     /// <summary>
-    /// Generic verb commands handler
+    /// Generic command
     /// </summary>
     /// <typeparam name="T"></typeparam>
     public interface ICommand<in T> : ICommand where T : class

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 
-namespace CommandLine.Verbs
+namespace CommandLine.Commands
 {
     public abstract class Command<T> : ICommand<T> where T : class
     {
