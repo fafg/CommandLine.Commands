@@ -18,8 +18,8 @@ namespace CommandLine.Commands
         /// <param name="options"></param>
         /// <returns>True when command can handle option class type</returns>
         bool CanHandle(object options);
-        object Execute(object options);
-        Task<object> ExecuteAsync(object options);
+        int Execute(object options);
+        Task<int> ExecuteAsync(object options);
     }
 
     /// <summary>
@@ -28,7 +28,7 @@ namespace CommandLine.Commands
     /// <typeparam name="T"></typeparam>
     public interface ICommand<in T> : ICommand where T : class
     {
-        object Execute(T options);
-        Task<object> ExecuteAsync(T options);
+        int Execute(T options);
+        Task<int> ExecuteAsync(T options);
     }
 }
