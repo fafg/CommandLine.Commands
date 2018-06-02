@@ -5,13 +5,9 @@
     <TargetFramework>netcoreapp2.0</TargetFramework>
   </PropertyGroup>
 
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
-    <LangVersion>7.2</LangVersion>
+  <PropertyGroup>
+    <LangVersion>latest</LangVersion>
   </PropertyGroup>
-
-  <ItemGroup>
-    <None Remove="ProcessingCommands.csproj~RF10cefb99.TMP" />
-  </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\..\src\CommandLine.Commands\CommandLine.Commands.csproj" />
