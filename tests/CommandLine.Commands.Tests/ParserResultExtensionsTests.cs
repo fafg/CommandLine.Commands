@@ -37,6 +37,8 @@ namespace CommandLine.Commands.Tests
             commandMock.Setup(m => m.ExecuteAsync(It.IsAny<object>())).Returns(Task.FromResult(433));
             commandMock.Setup(m => m.OptionsType).Returns(typeof(TestOptions));
 
+            var commands = new[] { commandMock.Object };
+
             // Act
             await Parser.Default.ParseArguments(new string[] { "abcd" }, commands)
                 .WithNotParsed(parsed => {

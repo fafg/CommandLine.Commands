@@ -1,6 +1,10 @@
 # CommandLine.Commands
 
-[![Build status](https://ci.appveyor.com/api/projects/status/lii5ru8udg5kb2ae?svg=true)](https://ci.appveyor.com/project/azachert/commandline-commands)
+## Build status
+
+|Production|CI
+|--|--
+|[![Build status](https://ci.appveyor.com/api/projects/status/7yqwrr50qfaua3wb/branch/master?svg=true)](https://ci.appveyor.com/project/azachert/commandline-commands/branch/master)|[![Build status](https://ci.appveyor.com/api/projects/status/7yqwrr50qfaua3wb?svg=true)](https://ci.appveyor.com/project/azachert/commandline-commands)
 
 ## Introduction
 
@@ -43,7 +47,7 @@ class Program
 		    .WithNotParsed(result => {
 			    // handle error
 		    })
-		    .parsed.WithParsedAsync(commands, returnValue => {
+		    .WithParsedAsync(commands, returnValue => {
 			    // consume returned value
 		    });
 	}
