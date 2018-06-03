@@ -16,17 +16,12 @@ namespace ProcessingCommands
                 new AddCommand()
             };
 
-            await Parser.Default.ParseArguments(args, commands)
+            return await Parser.Default.ParseArguments(args, commands)
                 .WithNotParsed(result =>
                 {
                     // handle error
                 })
-                .WithParsedAsync(commands, returnValue =>
-                {
-                    // consume returned value
-                });
-
-            return 0;
+                .WithParsedAsync(commands);
         }
     }
 }

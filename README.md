@@ -35,22 +35,21 @@ Handle input arguments in Program.Main
 ``` csharp
 class Program 
 {
-	public static async Task Main(IEnumerable<string> args)
-	{
-		var commands = new ICommand[] 
-		{
-			new AddCommand(),
-			// add your other commands here
-		};
+    public static async Task Main(IEnumerable<string> args)
+    {
+        var commands = new ICommand[] 
+        {
+	        new AddCommand(),
+	        // add your other commands here
+        };
 
-		await Parser.Default.ParseArguments(args, commands)
-		    .WithNotParsed(result => {
-			    // handle error
-		    })
-		    .WithParsedAsync(commands, returnValue => {
-			    // consume returned value
-		    });
-	}
+        return await Parser.Default.ParseArguments(args, commands)
+            .WithNotParsed(result =>
+            {
+                // handle error
+            })
+            .WithParsedAsync(commands);	
+    }
 }
 ```
 
