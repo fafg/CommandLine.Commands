@@ -23,7 +23,7 @@ Create your command handler class
 ``` csharp
 internal class AddCommand : Command<AddOptions>
 {
-        public override async Task<object> ExecuteAsync(AddOptions options)
+        public override async Task<int> ExecuteAsync(AddOptions options)
         {
             // do your magic here
             // and return some value
@@ -35,22 +35,21 @@ Handle input arguments in Program.Main
 ``` csharp
 class Program 
 {
-	public static async Task Main(IEnumerable<string> args)
-	{
-		var commands = new ICommand[] 
-		{
-			new AddCommand(),
-			// add your other commands here
-		};
+    public static async Task<int> Main(IEnumerable<string> args)
+    {
+        var commands = new ICommand[] 
+        {
+	        new AddCommand(),
+	        // add your other commands here
+        };
 
-		await Parser.Default.ParseArguments(args, commands)
-		    .WithNotParsed(result => {
-			    // handle error
-		    })
-		    .WithParsedAsync(commands, returnValue => {
-			    // consume returned value
-		    });
-	}
+        return await Parser.Default.ParseArguments(args, commands)
+            .WithNotParsed(result =>
+            {
+                // handle error
+            })
+            .WithParsedAsync(commands);	
+    }
 }
 ```
 

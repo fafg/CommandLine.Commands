@@ -40,15 +40,14 @@ namespace CommandLine.Commands.Tests
             var commands = new[] { commandMock.Object };
 
             // Act
-            await Parser.Default.ParseArguments(new string[] { "abcd" }, commands)
+            var result = await Parser.Default.ParseArguments(new string[] { "abcd" }, commands)
                 .WithNotParsed(parsed => {
                     Assert.True(false);
                 })
-                .WithParsedAsync(commands, result => {
-                    // Assert
-                    Assert.Equal(433, result);
-                })
+                .WithParsedAsync(commands)
                 ;
+
+            Assert.Equal(433, result);
         }
 
         [Verb("abcd")]
