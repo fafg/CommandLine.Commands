@@ -2,7 +2,7 @@
   <Import Project="..\..\package.props" />
   
   <PropertyGroup>
-    <TargetFrameworks>netstandard1.5</TargetFrameworks>
+    <TargetFrameworks>netstandard2.0</TargetFrameworks>
     <RootNamespace>CommandLine.Commands</RootNamespace>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageId>CommandLineParser.Commands</PackageId>
@@ -11,7 +11,7 @@
   </PropertyGroup>
   
   <ItemGroup>
-    <PackageReference Include="CommandLineParser" Version="2.2.0" />
+    <PackageReference Include="CommandLineParser" Version="2.6.0" />
   </ItemGroup>
 
 </Project>
